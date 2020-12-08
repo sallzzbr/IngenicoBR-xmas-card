@@ -210,8 +210,8 @@ var Engine = (function(global) {
 
     function renderPlayerSelect() {
         var options = [
-            [0, 'images/char-cat-girl.png'],
-            [101, 'images/char-horn-girl.png'],
+            [0, 'images/char-victor.png'],
+            [101, 'images/char-antonio.png'],
             [202, 'images/char-pink-girl.png'],
             [303, 'images/char-boy.png'],
             [404, 'images/char-princess-girl.png']
@@ -320,8 +320,8 @@ var Engine = (function(global) {
          'images/grass-block.png',
          'images/enemy-bug.png',
          'images/char-boy.png',
-         'images/char-cat-girl.png',
-         'images/char-horn-girl.png',
+         'images/char-victor.png',
+         'images/char-antonio.png',
          'images/char-pink-girl.png',
          'images/char-princess-girl.png',
          'images/Gem Blue.png',
