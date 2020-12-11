@@ -19,7 +19,7 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-  if (this.x <= 550){
+  if (this.x <= 707){
     this.x += this.speed * dt;
   } else {
     this.x = randomStart();
@@ -48,7 +48,7 @@ Player.prototype.update = function(){
   if(this.ctlKey === 'left' && this.x > 2.5){
     this.x = this.x - 100;
     //if right key is pressed and player is not on edge of map increment x
-  }else if(this.ctlKey === 'right' && this.x != 402.5){
+  }else if(this.ctlKey === 'right' && this.x != 602.5){
     this.x = this.x + 100;
     //if up key is pressed increment y
   }else if(this.ctlKey === 'up'){
@@ -88,14 +88,14 @@ for (var i = 0; i < 6; i++) {
 }
 
 function randomRow(){
-  var random_row = Math.floor(getRandomIntInclusive(0, 2));
-  var row = [60, 140, 220];
+  var random_row = Math.floor(getRandomIntInclusive(0, 3));
+  var row = [60, 140, 220, 300];
   return row[random_row];
 }
 
 function randomX(){
-  var random_row = Math.floor(getRandomIntInclusive(0, 4));
-  var row = [0, 100, 200, 300, 400];
+  var random_row = Math.floor(getRandomIntInclusive(0, 6));
+  var row = [0, 100, 200, 300, 400, 500, 600];
   return row[random_row];
 }
 
@@ -142,8 +142,8 @@ Selector.prototype.update = function() {
     if (this.x <= 0) {
         this.x = 0;
     };
-    if (this.x >= 404) {
-        this.x = 404;
+    if (this.x >= 606) {
+        this.x = 606;
     };
 }
 
@@ -177,9 +177,6 @@ var Gems = function () {
     this.bonus = types[this.value][1];
     this.x = randomX();
     this.y = randomRow();
-
-    console.log(types[this.value][0]);
-    console.log(types[this.value][1]);
 }
 
 function movingGems(){

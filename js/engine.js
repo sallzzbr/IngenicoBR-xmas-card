@@ -27,8 +27,8 @@ var Engine = (function(global) {
         playerLife = 3,
         lastTime;
 
-    canvas.width = 505;
-    canvas.height = 606;
+    canvas.width = 707;
+    canvas.height = 707;
     doc.body.appendChild(canvas);
 
     /* This function serves as the kickoff point for the game loop itself
@@ -95,7 +95,6 @@ var Engine = (function(global) {
           this.reset();
           playerLife -= 1;
           if (playerLife == 0){
-            console.log("teste");
             gameState = "gameover";
             playerLife = 3;
           }
@@ -137,12 +136,14 @@ var Engine = (function(global) {
                 'images/water-block.png',   // Top row is water
                 'images/stone-block.png',   // Row 1 of 3 of stone
                 'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
+                'images/stone-block.png',   // Row 1 of 3 of stone
+                'images/stone-block.png',   // Row 2 of 3 of stone
+                'images/grass-block.png',   // Row 3 of 3 of stone
                 'images/grass-block.png',   // Row 1 of 2 of grass
                 'images/grass-block.png'    // Row 2 of 2 of grass
             ],
-            numRows = 6,
-            numCols = 5,
+            numRows = 7,
+            numCols = 7,
             row, col;
 
         // Before drawing, clear existing canvas
@@ -166,11 +167,11 @@ var Engine = (function(global) {
         }
 
         // Score
-        ctx.fillStyle = "rgb(250, 250, 250)";
+        ctx.fillStyle = "black";
         ctx.font = "24px Helvetica";
         ctx.textAlign = "left";
         ctx.textBaseline = "top";
-        ctx.fillText("Score: " + player.points, 360, 64);
+        ctx.fillText("Score: " + player.points, 580, 64);
 
         if (gameState == "selection") {
             renderPlayerSelect();
@@ -210,11 +211,13 @@ var Engine = (function(global) {
 
     function renderPlayerSelect() {
         var options = [
-            [0, 'images/char-victor.png'],
-            [101, 'images/char-antonio.png'],
-            [202, 'images/char-pink-girl.png'],
-            [303, 'images/char-boy.png'],
-            [404, 'images/char-princess-girl.png']
+            [0, 'images/char-lais.png'],
+            [101, 'images/char-fer.png'],
+            [202, 'images/char-victor.png'],
+            [303, 'images/char-gi.png'],
+            [404, 'images/char-marina.png'],
+            [505, 'images/char-antonio.png'],
+            [606, 'images/char-ju.png']
         ];
 
         selector.render();
@@ -230,15 +233,15 @@ var Engine = (function(global) {
         ctx.font="36px Impact";
         // Create gradient
         var gradient=ctx.createLinearGradient(0,0,canvas.width,0);
-        gradient.addColorStop("0","magenta");
-        gradient.addColorStop("0.5","blue");
+        gradient.addColorStop("0","red");
+        gradient.addColorStop("0.5","red");
         gradient.addColorStop("1.0","red");
         // Fill with gradient
         ctx.fillStyle = "rgb(250, 250, 250)";
-        ctx.fillText("Choose your characther", 80, 480);
+        ctx.fillText("Choose your characther", 180, 480);
         ctx.strokeStyle=gradient;
         ctx.lineWidth = 2;
-        ctx.strokeText("Choose your characther", 80, 480);
+        ctx.strokeText("Choose your characther", 180, 480);
 
     }
     /* This function does nothing but it could have been a good place to
@@ -262,9 +265,9 @@ var Engine = (function(global) {
         ctx.fillStyle = "black";
         ctx.fill();
         ctx.font="98px Impact";
-        ctx.fillStyle = "rgb(77, 0, 0)";
-        ctx.fillText("YOU DIED", 90, 220);
-        gameOverText("Frogger Souls", 170, 330, "Press SPACE to restart", 95, 370, false)
+        ctx.fillStyle = "rgb(220, 0, 0)";
+        ctx.fillText("GAME OVER", 160, 220);
+        gameOverText("You have to collect the papers!", 160, 330, "Press SPACE to restart", 160, 370, false)
       } else if ( player.points > 0 && player.points < 500) {
           gameOverMessage("GG", 201.5, 190, 98);
           gameOverText("GIT GUD", 190, 300, "Press SPACE to restart", 95, 340, true)
@@ -319,11 +322,13 @@ var Engine = (function(global) {
          'images/water-block.png',
          'images/grass-block.png',
          'images/enemy-bug.png',
-         'images/char-boy.png',
+         'images/char-gi.png',
          'images/char-victor.png',
          'images/char-antonio.png',
-         'images/char-pink-girl.png',
-         'images/char-princess-girl.png',
+         'images/char-lais.png',
+         'images/char-marina.png',
+         'images/char-ju.png',
+         'images/char-fer.png',
          'images/Gem Blue.png',
          'images/Gem Green.png',
          'images/Gem Orange.png',
