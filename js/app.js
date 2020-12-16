@@ -48,7 +48,7 @@ Player.prototype.update = function(){
   if(this.ctlKey === 'left' && this.x > 2.5){
     this.x = this.x - 100;
     //if right key is pressed and player is not on edge of map increment x
-  }else if(this.ctlKey === 'right' && this.x != 602.5){
+  }else if(this.ctlKey === 'right' && this.x != 702.5){
     this.x = this.x + 100;
     //if up key is pressed increment y
   }else if(this.ctlKey === 'up'){
@@ -95,7 +95,7 @@ function randomRow(){
 
 function randomX(){
   var random_row = Math.floor(getRandomIntInclusive(0, 6));
-  var row = [0, 100, 200, 300, 400, 500, 600];
+  var row = [0, 100, 200, 300, 400, 500, 600, 700];
   return row[random_row];
 }
 
@@ -128,7 +128,7 @@ document.addEventListener('keyup', function(e) {
 });
 
 var Selector = function () {
-    this.sprite = 'images/Star.png';
+    this.sprite = 'images/hand.png';
 
     this.x = 0;
     this.y = 202;
@@ -142,8 +142,8 @@ Selector.prototype.update = function() {
     if (this.x <= 0) {
         this.x = 0;
     };
-    if (this.x >= 606) {
-        this.x = 606;
+    if (this.x >= 707) {
+        this.x = 707;
     };
 }
 

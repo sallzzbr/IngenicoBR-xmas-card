@@ -27,7 +27,7 @@ var Engine = (function(global) {
         playerLife = 3,
         lastTime;
 
-    canvas.width = 707;
+    canvas.width = 808;
     canvas.height = 707;
     doc.body.appendChild(canvas);
 
@@ -142,8 +142,8 @@ var Engine = (function(global) {
                 'images/grass-block.png',   // Row 1 of 2 of grass
                 'images/grass-block.png'    // Row 2 of 2 of grass
             ],
-            numRows = 7,
-            numCols = 7,
+            numRows = 8,
+            numCols = 8,
             row, col;
 
         // Before drawing, clear existing canvas
@@ -171,7 +171,7 @@ var Engine = (function(global) {
         ctx.font = "24px Helvetica";
         ctx.textAlign = "left";
         ctx.textBaseline = "top";
-        ctx.fillText("Score: " + player.points, 580, 64);
+        ctx.fillText("Score: " + player.points, 610, 64);
 
         if (gameState == "selection") {
             renderPlayerSelect();
@@ -185,7 +185,7 @@ var Engine = (function(global) {
 
     function playerHP(){
       for(i = 0; i < playerLife; i++){
-        ctx.drawImage(Resources.get('images/Heart.png'), i * 45, 30, 50, 86);
+        ctx.drawImage(Resources.get('images/lamp.png'), i * 45, 30, 50, 86);
       }
     }
 
@@ -211,13 +211,14 @@ var Engine = (function(global) {
 
     function renderPlayerSelect() {
         var options = [
-            [0, 'images/char-lais.png'],
-            [101, 'images/char-fer.png'],
+            [0, 'images/char-marrin.png'],
+            [101, 'images/char-lais.png'],
             [202, 'images/char-victor.png'],
             [303, 'images/char-gi.png'],
             [404, 'images/char-marina.png'],
             [505, 'images/char-antonio.png'],
-            [606, 'images/char-ju.png']
+            [606, 'images/char-ju.png'],
+            [707, 'images/char-fer.png']
         ];
 
         selector.render();
@@ -238,10 +239,10 @@ var Engine = (function(global) {
         gradient.addColorStop("1.0","red");
         // Fill with gradient
         ctx.fillStyle = "rgb(250, 250, 250)";
-        ctx.fillText("Choose your characther", 180, 480);
+        ctx.fillText("Choose your characther", 230, 480);
         ctx.strokeStyle=gradient;
         ctx.lineWidth = 2;
-        ctx.strokeText("Choose your characther", 180, 480);
+        ctx.strokeText("Choose your characther", 230, 480);
 
     }
     /* This function does nothing but it could have been a good place to
@@ -266,24 +267,21 @@ var Engine = (function(global) {
         ctx.fill();
         ctx.font="98px Impact";
         ctx.fillStyle = "rgb(220, 0, 0)";
-        ctx.fillText("GAME OVER", 160, 220);
-        gameOverText("You have to collect the papers!", 160, 330, "Press SPACE to restart", 160, 370, false)
+        ctx.fillText("GAME OVER", 200, 220);
+        gameOverText("You have to collect the papers!", 200, 330, "Press SPACE to restart", 200, 370, false)
       } else if ( player.points > 0 && player.points < 500) {
-          gameOverMessage("GG", 201.5, 190, 98);
-          gameOverText("GIT GUD", 190, 300, "Press SPACE to restart", 95, 340, true)
+          gameOverMessage("NICE!", 300, 260, 98);
+          gameOverText("I am sure you can do better!", 25, 360, "Press SPACE to restart", 90, 420, true)
       } else {
           gameOverMessage("CONGRATULATIONS", 15, 220, 62)
-          gameOverText("You are awesome!", 125, 300, "Press SPACE to restart", 95, 340, true)
+          gameOverText("You are awesome!", 125, 300, "Press SPACE to restart", 105, 340, true)
       }
     }
 
     function gameOverMessage(message, x, y, fontSize){
       ctx.font= fontSize + "px Impact";
       var gradient=ctx.createLinearGradient(0,0,canvas.width,0);
-      gradient.addColorStop("0","magenta");
-      gradient.addColorStop("0.5","blue");
-      gradient.addColorStop("1.0","red");
-      ctx.fillStyle = "rgb(250, 250, 250)";
+      ctx.fillStyle = "rgb(65, 180, 210)";
       ctx.fillText(message, x, y);
       ctx.strokeStyle=gradient;
       ctx.lineWidth = 2;
@@ -292,7 +290,9 @@ var Engine = (function(global) {
 
     function gameOverText(topText, topX, topY, bottomText, botX, botY, stroke){
       ctx.fillStyle = "rgb(250, 250, 250)";
-      ctx.font = "32px Helvetica";
+      ctx.strokeStyle = "rgb(65, 180, 210)";
+      ctx.lineWidth = 1;
+      ctx.font = "60px Helvetica";
       ctx.fillText(topText, topX, topY);
       ctx.fillText(bottomText, botX, botY);
       if (stroke == true){
@@ -329,11 +329,12 @@ var Engine = (function(global) {
          'images/char-marina.png',
          'images/char-ju.png',
          'images/char-fer.png',
+         'images/char-marrin.png',
          'images/Gem Blue.png',
          'images/Gem Green.png',
          'images/Gem Orange.png',
-         'images/Star.png',
-         'images/Heart.png'
+         'images/hand.png',
+         'images/lamp.png'
      ]);
     Resources.onReady(init);
 
