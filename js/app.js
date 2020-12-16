@@ -5,7 +5,7 @@ var Enemy = function(start, row) {
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
+    this.sprite = 'images/enemy-grinch.png';
 //This will set the position based on the function enemy getting called on the array allEnemies ahead
     this.x = start;
     this.y = row;

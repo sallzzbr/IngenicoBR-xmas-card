@@ -142,7 +142,7 @@ var Engine = (function(global) {
                 'images/grass-block.png',   // Row 1 of 2 of grass
                 'images/grass-block.png'    // Row 2 of 2 of grass
             ],
-            numRows = 8,
+            numRows = 7,
             numCols = 8,
             row, col;
 
@@ -167,11 +167,11 @@ var Engine = (function(global) {
         }
 
         // Score
-        ctx.fillStyle = "black";
-        ctx.font = "24px Helvetica";
+        ctx.fillStyle = 'rgb(240, 135, 145)';
+        ctx.font = "48px Helvetica";
         ctx.textAlign = "left";
         ctx.textBaseline = "top";
-        ctx.fillText("Score: " + player.points, 610, 64);
+        ctx.fillText("Score: " + player.points, 15, 65);
 
         if (gameState == "selection") {
             renderPlayerSelect();
@@ -185,7 +185,7 @@ var Engine = (function(global) {
 
     function playerHP(){
       for(i = 0; i < playerLife; i++){
-        ctx.drawImage(Resources.get('images/lamp.png'), i * 45, 30, 50, 86);
+        ctx.drawImage(Resources.get('images/lamp.png'), i * 45 + 660, 40, 50, 86);
       }
     }
 
@@ -233,14 +233,10 @@ var Engine = (function(global) {
 
         ctx.font="36px Impact";
         // Create gradient
-        var gradient=ctx.createLinearGradient(0,0,canvas.width,0);
-        gradient.addColorStop("0","red");
-        gradient.addColorStop("0.5","red");
-        gradient.addColorStop("1.0","red");
         // Fill with gradient
         ctx.fillStyle = "rgb(250, 250, 250)";
         ctx.fillText("Choose your characther", 230, 480);
-        ctx.strokeStyle=gradient;
+        ctx.strokeStyle = "rgb(240, 135, 145)";
         ctx.lineWidth = 2;
         ctx.strokeText("Choose your characther", 230, 480);
 
@@ -267,14 +263,14 @@ var Engine = (function(global) {
         ctx.fill();
         ctx.font="98px Impact";
         ctx.fillStyle = "rgb(220, 0, 0)";
-        ctx.fillText("GAME OVER", 200, 220);
-        gameOverText("You have to collect the papers!", 200, 330, "Press SPACE to restart", 200, 370, false)
+        ctx.fillText("GAME OVER", 180, 220);
+        gameOverText("You have to collect the papers!", 5, 360, "Press SPACE to restart", 90, 440, false)
       } else if ( player.points > 0 && player.points < 500) {
           gameOverMessage("NICE!", 300, 260, 98);
           gameOverText("I am sure you can do better!", 25, 360, "Press SPACE to restart", 90, 420, true)
       } else {
-          gameOverMessage("CONGRATULATIONS", 15, 220, 62)
-          gameOverText("You are awesome!", 125, 300, "Press SPACE to restart", 105, 340, true)
+          gameOverMessage("CONGRATULATIONS", 50, 260, 98)
+          gameOverText("You are awesome!", 150, 360, "Press SPACE to restart", 90, 420, true)
       }
     }
 
@@ -321,7 +317,7 @@ var Engine = (function(global) {
          'images/stone-block.png',
          'images/water-block.png',
          'images/grass-block.png',
-         'images/enemy-bug.png',
+         'images/enemy-grinch.png',
          'images/char-gi.png',
          'images/char-victor.png',
          'images/char-antonio.png',
