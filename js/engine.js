@@ -168,7 +168,7 @@ var Engine = (function(global) {
 
         // Score
         ctx.fillStyle = 'rgb(240, 135, 145)';
-        ctx.font = "48px Helvetica";
+        ctx.font = "48px";
         ctx.textAlign = "left";
         ctx.textBaseline = "top";
         ctx.fillText("Score: " + player.points, 15, 65);
@@ -180,6 +180,11 @@ var Engine = (function(global) {
         } else {
         renderEntities();
         playerHP();
+        ctx.fillStyle = "rgb(250, 250, 250)";
+        ctx.fillText("Use the keyboard arrows to move", 160, 560);
+        ctx.strokeStyle = "rgb(240, 135, 145)";
+        ctx.lineWidth = 2;
+        ctx.strokeText("Use the keyboard arrows to move", 160, 560);
       }
     }
 
@@ -236,9 +241,11 @@ var Engine = (function(global) {
         // Fill with gradient
         ctx.fillStyle = "rgb(250, 250, 250)";
         ctx.fillText("Choose your characther", 230, 480);
+        ctx.fillText("Use the keyboard arrows to move and space to select", 15, 540);
         ctx.strokeStyle = "rgb(240, 135, 145)";
         ctx.lineWidth = 2;
         ctx.strokeText("Choose your characther", 230, 480);
+        ctx.strokeText("Use the keyboard arrows to move and space to select", 15, 540);
 
     }
     /* This function does nothing but it could have been a good place to
