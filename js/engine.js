@@ -236,6 +236,17 @@ var Engine = (function(global) {
             }
         }
 
+        ctx.font="24px Impact";
+        ctx.fillStyle = "rgb(0, 0, 0)";
+        ctx.fillText("Marin", 25, 340);
+        ctx.fillText("Laís", 130, 340);
+        ctx.fillText("Victor", 225, 340);
+        ctx.fillText("Giovanna", 310, 340);
+        ctx.fillText("Marina", 425, 340);
+        ctx.fillText("Antônio", 520, 340);
+        ctx.fillText("Juliana", 620, 340);
+        ctx.fillText("Fernanda", 712, 340);
+
         ctx.font="36px Impact";
         // Create gradient
         // Fill with gradient
