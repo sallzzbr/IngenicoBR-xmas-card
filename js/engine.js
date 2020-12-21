@@ -344,9 +344,9 @@ var Engine = (function(global) {
          'images/char-ju.png',
          'images/char-fer.png',
          'images/char-marrin.png',
-         'images/Gem Blue.png',
-         'images/Gem Green.png',
-         'images/Gem Orange.png',
+         'images/present-blue.png',
+         'images/present-green.png',
+         'images/present-red.png',
          'images/hand.png',
          'images/lamp.png'
      ]);

@@ -95,7 +95,7 @@ function randomRow(){
 
 function randomX(){
   var random_row = Math.floor(getRandomIntInclusive(0, 6));
-  var row = [0, 100, 200, 300, 400, 500, 600, 700];
+  var row = [0, 100, 200, 300, 405, 505, 605, 705];
   return row[random_row];
 }
 
@@ -167,9 +167,9 @@ var selector = new Selector();
 var Gems = function () {
 
     var types = [
-        ['images/Gem Blue.png', 5],
-        ['images/Gem Green.png', 10],
-        ['images/Gem Orange.png', 15]
+        ['images/present-blue.png', 5],
+        ['images/present-green.png', 10],
+        ['images/present-red.png', 15]
     ];
 
     this.value = Math.floor(getRandomIntInclusive(0, 2))
